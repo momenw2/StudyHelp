@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigation Bar</title>
+    <link rel="stylesheet" href="/headerStyle.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="/"><img src="logo.png" alt="Logo" /></a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#">About us</a></li>
+            <li><a href="/countries">Explore universities</a></li>
+            <!-- <li><a href="#">Link 3</a></li> -->
+          </ul>
+        </nav>
+
+        <div>
+          <% if(user) {%>
+          <!-- <a href="/profilePage" class="fullNameLink"><%= user.fullName %></a>
+          <a href="user/logout" class="logoutButton">Log out</a> -->
+
+          <div class="dropdown">
+            <button class="dropbtn" onclick="myFunction()">
+              <%= user.fullName %>
+              <img src="dropBtn.png" alt="" class="dropArrow" />
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="myDropdown">
+              <a href="/profilePage" class="dropDownLink">Profile</a>
+              <a href="user/logout" class="dropDownLink">Logout</a>
+            </div>
+          </div>
+          <% } else { %>
+          <div class="login">
+            <a href="/login">Login</a>
+          </div>
+          <% } %>
+        </div>
+      </div>
+    </header>
+
+    <script>
+      /* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+
+      // Close the dropdown if the user clicks outside of it
+      window.onclick = function (e) {
+        if (!e.target.matches(".dropbtn")) {
+          var myDropdown = document.getElementById("myDropdown");
+          if (myDropdown.classList.contains("show")) {
+            myDropdown.classList.remove("show");
+          }
+        }
+      };
+    </script>
+  </body>
+</html>
