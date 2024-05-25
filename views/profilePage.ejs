@@ -135,6 +135,54 @@
           </tbody>
         </table>
       </div>
+
+      <div class="table_component" role="region" tabindex="0">
+        <table>
+          <caption class="tableTittle">
+            List
+          </caption>
+          <thead>
+            <tr>
+              <th>
+                <span class="progressCompleted">
+                  <i class="fa fa-circle completedDot"></i>Completed
+                </span>
+              </th>
+              <th>
+                <span class="progressInProgress">
+                  <i class="fa fa-circle InProgressDot"></i>In Progress
+                </span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <% var completedProgress = []; var inProgressProgress = [];
+            user.progressTable.forEach(function(progress) { if (progress.State
+            === 'Completed') { completedProgress.push(progress); } else if
+            (progress.State === 'In Progress') {
+            inProgressProgress.push(progress); } }); var maxLength =
+            Math.max(completedProgress.length, inProgressProgress.length); for
+            (var i = 0; i < maxLength; i++) { %>
+            <tr>
+              <td>
+                <div class="progressContainer">
+                  <% if (i < completedProgress.length) { %>
+                  <p><%= completedProgress[i].Name %></p>
+                  <% } %>
+                </div>
+              </td>
+              <td>
+                <div class="progressContainer">
+                  <% if (i < inProgressProgress.length) { %>
+                  <p><%= inProgressProgress[i].Name %></p>
+                  <% } %>
+                </div>
+              </td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <script>
