@@ -8,29 +8,34 @@ body {
 
 * {
   font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
 }
+
 .wave-container {
   position: relative;
   width: 100%;
   height: 50vh;
   overflow: hidden;
 }
+
 #canvas {
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
 }
+
 .TopDiv {
   position: relative;
   width: 100%;
   height: 100%;
   display: flex;
-  color: rgb(0, 0, 0);
-  display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   padding-left: 60px;
 }
+
 .TopDiv h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 80px;
@@ -55,13 +60,13 @@ body {
   border-radius: 20px;
   padding-top: 18px;
 }
+
 .TopDiv a:hover {
   background-color: #000000;
   color: #d1d1d1;
 }
 
 .helpContainer {
-  background: rgb(230, 243, 255);
   background: linear-gradient(
     180deg,
     rgba(230, 243, 255, 1) 35%,
@@ -69,45 +74,41 @@ body {
   );
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
+  padding: 20px;
 }
 
 .helpRow {
   display: flex;
   flex-direction: row;
-  padding: 40px;
-  margin: 0 auto;
-  justify-content: space-between;
-  width: 50%;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
   margin-bottom: 20px;
 }
 
-/* .helpRow .title {
-  justify-content: center;
-  text-align: center;
-} */
-
 .helpRowTitle h2 {
   font-size: 50px;
-  width: 100%;
-  margin: 0 auto;
-  justify-content: center;
   text-align: center;
-  margin-top: 40px;
   color: #004281;
-  margin-bottom: 60px;
+  margin: 40px 0;
+}
+
+.helpColumn {
+  flex: 1;
+  text-align: left;
 }
 
 .helpColumn h4 {
   color: #4aa8ff;
   font-size: 30px;
-  /* font-weight: 400; */
 }
 
 .helpColumn p {
   font-weight: 500;
   font-size: 16px;
-  line-height: 3cap;
 }
 
 .num1,
@@ -115,10 +116,12 @@ body {
 .num3,
 .num4 {
   font-size: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .typing-text-container {
-  position: relative;
   height: 24px;
   overflow: hidden;
   white-space: nowrap;
@@ -140,10 +143,10 @@ body {
 .animationNum {
   width: 100px;
   height: 100px;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .animationNum::before {
@@ -161,7 +164,7 @@ body {
 .animationNum span {
   font-size: 35px;
   color: white;
-  z-index: 1; /* Ensure number is on top */
+  z-index: 1;
 }
 
 @keyframes squareToCircle {
@@ -197,14 +200,13 @@ body {
   flex-direction: row;
   width: 100%;
   margin-top: 50px;
-  /* background-color: #54aafb; */
-  /* color: white; */
 }
 
 .fourthLeftBox {
   width: 40%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .bgBox {
@@ -218,15 +220,13 @@ body {
       calc(3 * 23px),
     repeating-linear-gradient(135deg, #0076e3 0 12.5%, #4aa8ff 0 25%);
   background-size: calc(4 * 23px) calc(4 * 23px);
-  /* margin: 0 auto; */
-  /* margin-top: 10%; */
   border-radius: 20px 50px;
-  /* padding-top: 10px; */
   margin-top: 30px;
 }
+
 .fourthRightBox {
   width: 60%;
-  line-height: 2cap;
+  padding: 20px;
 }
 
 .fourthRightBox h3 {
@@ -240,4 +240,134 @@ body {
 .boldTxt {
   font-weight: bold;
   color: #4aa8ff;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .TopDiv h1 {
+    font-size: 60px;
+  }
+
+  .TopDiv p {
+    font-size: 24px;
+  }
+
+  .helpRowTitle h2 {
+    font-size: 40px;
+  }
+
+  .helpColumn h4 {
+    font-size: 24px;
+  }
+
+  .helpColumn p {
+    font-size: 14px;
+  }
+
+  .animationNum {
+    width: 80px;
+    height: 80px;
+  }
+
+  .animationNum span {
+    font-size: 28px;
+  }
+
+  .fourthRightBox h3 {
+    font-size: 32px;
+  }
+
+  .fourthRightBox h5 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .TopDiv {
+    padding-left: 30px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .TopDiv h1 {
+    font-size: 40px;
+  }
+
+  .TopDiv p {
+    font-size: 20px;
+  }
+
+  .helpRow {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .helpColumn {
+    text-align: center;
+    padding: 10px;
+  }
+
+  .animationNum {
+    margin: 0 auto;
+  }
+
+  .fourthContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fourthLeftBox,
+  .fourthRightBox {
+    width: 90%;
+  }
+
+  .fourthRightBox h3 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .fourthRightBox h5 {
+    font-size: 16px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .TopDiv h1 {
+    font-size: 30px;
+  }
+
+  .TopDiv p {
+    font-size: 16px;
+  }
+
+  .helpRow {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .helpColumn h4 {
+    font-size: 20px;
+  }
+
+  .helpColumn p {
+    font-size: 12px;
+  }
+
+  .animationNum {
+    width: 60px;
+    height: 60px;
+  }
+
+  .animationNum span {
+    font-size: 24px;
+  }
+
+  .fourthRightBox h3 {
+    font-size: 24px;
+  }
+
+  .fourthRightBox h5 {
+    font-size: 14px;
+  }
 }
