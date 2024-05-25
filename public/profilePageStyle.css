@@ -123,6 +123,7 @@ body {
   border-collapse: collapse;
   border-spacing: 1px;
   text-align: left;
+  margin-bottom: 50px;
 }
 
 .table_component caption {
@@ -133,6 +134,14 @@ body {
 .table_component th {
   border: 1px solid #dededf;
   background-color: #006bb3;
+  height: 42px;
+  color: #ffffff;
+  padding: 5px;
+}
+
+.table_component .thList {
+  border: 1px solid #dededf;
+  background-color: #c2c2c2;
   height: 42px;
   color: #ffffff;
   padding: 5px;
@@ -215,4 +224,17 @@ body {
 .InProgressDot {
   color: rgba(15, 134, 208, 0.57);
   margin-right: 10px;
+}
+
+.thListProgressCompleted {
+  background-color: rgba(80, 217, 80, 0.57);
+  padding: 10px;
+  border-radius: 20px;
+  color: #ffffff;
+}
+.thListProgressInProgress {
+  background-color: rgba(55, 178, 255, 0.57);
+  padding: 10px;
+  border-radius: 20px;
+  color: #ffffff;
 }
