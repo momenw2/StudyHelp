@@ -16,17 +16,13 @@
           <ul>
             <li><a href="#">About us</a></li>
             <li><a href="/countries">Explore universities</a></li>
-            <!-- <li><a href="#">Link 3</a></li> -->
           </ul>
         </nav>
 
         <div>
-          <% if(user) {%>
-          <!-- <a href="/profilePage" class="fullNameLink"><%= user.fullName %></a>
-          <a href="user/logout" class="logoutButton">Log out</a> -->
-
+          <% if(user) { %>
           <div class="dropdown">
-            <button class="dropbtn" onclick="myFunction()">
+            <button class="dropbtn" id="dropdownButton">
               <%= user.fullName %>
               <img src="dropBtn.png" alt="" class="dropArrow" />
               <i class="fa fa-caret-down"></i>
@@ -43,24 +39,72 @@
           <% } %>
         </div>
       </div>
-    </header>
+      <div class="gtranslate_wrapper"></div>
+      <script>
+        window.gtranslateSettings = {
+          default_language: "en",
+          detect_browser_language: true,
+          languages: ["en", "fr", "de", "it", "es", "zh-CN"],
+          wrapper_selector: ".gtranslate_wrapper",
+        };
 
-    <script>
-      /* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-      function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-      }
+        function saveLanguagePreference(lang) {
+          localStorage.setItem("preferredLanguage", lang);
+        }
 
-      // Close the dropdown if the user clicks outside of it
-      window.onclick = function (e) {
-        if (!e.target.matches(".dropbtn")) {
-          var myDropdown = document.getElementById("myDropdown");
-          if (myDropdown.classList.contains("show")) {
-            myDropdown.classList.remove("show");
+        function applyLanguagePreference() {
+          const preferredLanguage = localStorage.getItem("preferredLanguage");
+          if (preferredLanguage) {
+            // Simulate a language change event for the translation widget
+            window.gtranslateSettings.default_language = preferredLanguage;
+            // Directly set the language
+            const event = new Event("change");
+            const selectElement = document.querySelector(
+              ".gtranslate_wrapper select"
+            );
+            if (selectElement) {
+              selectElement.value = preferredLanguage;
+              selectElement.dispatchEvent(event);
+            }
           }
         }
-      };
-    </script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+          applyLanguagePreference();
+
+          const languageSelector = document.querySelector(
+            ".gtranslate_wrapper select"
+          );
+          if (languageSelector) {
+            languageSelector.addEventListener("change", (event) => {
+              const selectedLanguage = event.target.value;
+              saveLanguagePreference(selectedLanguage);
+            });
+          }
+
+          const dropdownButton = document.getElementById("dropdownButton");
+          const myDropdown = document.getElementById("myDropdown");
+
+          dropdownButton.addEventListener("click", () => {
+            myDropdown.classList.toggle("show");
+          });
+
+          window.addEventListener("click", (e) => {
+            if (
+              !e.target.matches("#dropdownButton") &&
+              !e.target.closest(".dropdown")
+            ) {
+              if (myDropdown.classList.contains("show")) {
+                myDropdown.classList.remove("show");
+              }
+            }
+          });
+        });
+      </script>
+      <script
+        src="https://cdn.gtranslate.net/widgets/latest/float.js"
+        defer
+      ></script>
+    </header>
   </body>
 </html>
