@@ -118,3 +118,64 @@ nav ul li a:hover {
   height: 10px;
   margin-left: 9.5px;
 }
+
+/* ######## Responsive ####### */
+.sideBar a {
+  text-decoration: none;
+  color: #000000;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.sideBar li {
+  height: 50px;
+  list-style: none;
+}
+
+.sideBar a:hover {
+  background-color: rgb(189, 186, 186);
+}
+
+.sideBar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  background-color: rgba(236, 236, 236, 0.48);
+  backdrop-filter: blur(10px);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.sideBar li {
+  width: 100%;
+}
+
+.sideBar a {
+  width: 100%;
+}
+
+.menu-button {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .hideOnMobile {
+    display: none;
+  }
+  .menu-button {
+    display: block;
+  }
+}
+
+@media (max-width: 400px) {
+  .sideBar {
+    width: 100%;
+  }
+}
