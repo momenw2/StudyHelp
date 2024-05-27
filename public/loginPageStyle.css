@@ -75,3 +75,43 @@ body {
   margin-right: 250px;
   margin-bottom: 20px;
 }
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .firstContainer {
+    margin: 20px; /* Reduce margin for smaller screens */
+  }
+
+  .firstContainer h1 {
+    font-size: 40px; /* Adjust font size for smaller screens */
+  }
+
+  .firstContainer p {
+    font-size: 30px; /* Adjust font size for smaller screens */
+  }
+
+  .formContainer {
+    width: 90%; /* Reduce width for smaller screens */
+    margin: 0 auto; /* Center the form container */
+    height: auto; /* Adjust height for better fit */
+  }
+
+  .emailForm,
+  .passwordForm {
+    width: 90%; /* Full width input fields on smaller screens */
+    padding-left: 16px; /* Adjust padding */
+  }
+
+  .loginButton {
+    width: 80%; /* Full width button on smaller screens */
+    height: 50px;
+  }
+
+  .botDiv {
+    font-size: 16px; /* Adjust font size for smaller screens */
+  }
+
+  .error {
+    margin-right: 0; /* Adjust margin for smaller screens */
+  }
+}
