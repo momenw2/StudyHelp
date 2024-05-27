@@ -85,3 +85,39 @@ body {
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
   border-radius: 20px;
 }
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .cardsContainer {
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+
+  .cardBox {
+    width: 80%;
+  }
+
+  .card {
+    width: 90%; /* Adjust the width to fit the screen */
+    margin: 10px 0; /* Add margin for spacing between cards */
+  }
+
+  .card-bg,
+  .bg-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .cardtxt {
+    padding-left: 10px;
+  }
+
+  .cardtxt h4 {
+    font-size: 20px;
+  }
+
+  .cardtxt p {
+    font-size: 18px;
+  }
+}
