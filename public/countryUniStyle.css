@@ -16,8 +16,8 @@ body {
 .mainContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  padding-top: 20px; /* Add padding to start from top */
   min-height: 100vh;
 }
 
@@ -89,4 +89,38 @@ body {
 
 .cardBox:hover .uniRank {
   color: #fff;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .cardBox {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .txtbox {
+    margin-left: 0;
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .logoBox,
+  .rankBox {
+    margin-bottom: 10px;
+  }
+
+  .uniName {
+    font-size: 1.2em;
+  }
+
+  .uniRank {
+    font-size: 1em;
+  }
+
+  .uniLogo {
+    height: 60px;
+    width: 60px;
+  }
 }
