@@ -3,9 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="/ourServicesPageStyle.css" />
+    <title>Study Help - Our Services</title>
   </head>
   <body>
-    hello
+    <%- include('partials/header.ejs') -%>
+
+    <div class="firstDivContainer">
+      <div class="fistDivLeftSide">
+        <div class="headerBox">
+          <h2>Our Services</h2>
+        </div>
+        <div class="supHeaderBox">
+          <h4>Study Abroad with Study Help</h4>
+        </div>
+        <div class="firstDivTxtBox">
+          <p>
+            At Study Help, we provide comprehensive services to help students<br />
+            achieve their dreams of studying abroad. Our offerings are
+            designed<br />
+            to cater to different needs and budgets, ensuring that every
+            student<br />
+            can find the support they need. Here’s how we can assist you:
+          </p>
+        </div>
+      </div>
+      <div class="fistDivRightSide">
+        <img src="/ourServicesGif.gif" alt="" />
+      </div>
+    </div>
+
+    
   </body>
 </html>

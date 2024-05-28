@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nova+Square&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  background-color: #ffffff;
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+}
+
+.firstDivContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.fistDivRightSide {
+  width: 40%;
+}
+
+.fistDivRightSide img {
+  width: 70%;
+  height: auto;
+  padding-top: 20px;
+}
+
+.fistDivLeftSide {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 60px;
+}
+
+.headerBox h2 {
+  color: #4aa8ff;
+  font-size: 70px;
+}
+
+.supHeaderBox h4 {
+  color: #4a71ff;
+}
+
+.firstDivTxtBox p {
+  line-height: 3vh;
+}
