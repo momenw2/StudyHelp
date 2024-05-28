@@ -145,10 +145,11 @@ body {
 .secondPlanbox,
 .thirdPlanBox {
   border: 2px solid #00367dcc;
-  border-radius: 50px 10px;
+  border-radius: 20px;
   padding: 40px;
+  width: 45%;
   margin-bottom: 20px;
-  /* background-color: #00367d2e; */
+  margin: 20px;
 }
 
 .thirdDivPlanTitle {
@@ -172,4 +173,16 @@ body {
 
 .thirdDivUl li {
   line-height: 4vh;
+}
+
+.thirdDivTop {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.thirdDivBottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
