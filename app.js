@@ -36,6 +36,7 @@ app.get("/adminDashboard-users", (req, res) =>
   res.render("adminDashboard-users")
 );
 app.get("/adminEditUser", (req, res) => res.render("adminEditUserPage"));
+app.get("/ourServices", (req, res) => res.render("ourServicesPage"));
 
 // Uni Router
 const universityRoute = require("./Routes/uni.router");
