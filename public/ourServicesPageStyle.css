@@ -46,3 +46,82 @@ body {
 .firstDivTxtBox p {
   line-height: 3vh;
 }
+
+.subscriptionContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: auto;
+  padding: 50px;
+  margin-top: 40px;
+}
+
+.firstCardBox,
+.secondCardBox,
+.thirdCardBox {
+  display: flex;
+  flex-direction: column;
+  width: 27%;
+  border: 1px solid #57575785;
+  padding: 40px 20px;
+  margin: 0 40px;
+  border-radius: 20px;
+  background-color: #57575785;
+  color: white;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
+    rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+
+.planTitle {
+  font-weight: 600;
+}
+
+.price {
+  font-size: 30px;
+  color: rgb(134, 244, 134);
+}
+
+.planDescription {
+  font-weight: 600;
+}
+
+.planLi {
+  line-height: 3vh;
+}
+
+.secondDivContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: #0051bccc;
+  /* background-color: rgb(162, 243, 198); */
+  margin-top: 70px;
+  justify-content: center;
+}
+
+.topBox {
+  margin: 0 auto;
+  color: white;
+  padding-top: 20px;
+  font-size: 40px;
+}
+
+.buyButton {
+  margin-top: auto;
+}
+
+.buyButton button {
+  border: none;
+  background-color: #cbe0fbcc;
+  font-size: 20px;
+  width: 12vh;
+  height: 5vh;
+  margin-top: 40%;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.buyButton button:hover {
+  background-color: #00367dcc;
+  color: white;
+}
