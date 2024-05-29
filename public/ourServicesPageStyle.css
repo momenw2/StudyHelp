@@ -186,3 +186,58 @@ body {
   flex-direction: row;
   justify-content: center;
 }
+
+.howItWorksContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #0051bccc;
+}
+
+.howItWorksTitle {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.howItWorksTitle h3 {
+  font-size: 60px;
+  color: white;
+}
+
+.howItWorksContent {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.qrCodeBox {
+  width: 40%;
+  text-align: center;
+}
+
+.qrCodeBox img {
+  width: 50%;
+}
+
+.howItWorksTxtBox {
+  width: 60%;
+  color: white;
+  padding: 20px;
+}
+
+.howItWorksUl {
+  list-style: decimal;
+  line-height: 4vh;
+}
+
+.howItWorksUl .bold {
+  color: #edf4fc;
+  font-size: 17px;
+}
+.howItWorksUl li a {
+  color: #16385e;
+  font-size: 17px;
+  text-decoration: none;
+  cursor: pointer;
+}
