@@ -157,8 +157,8 @@
         const gradient = ctx.createLinearGradient(0, 0, width, height);
         gradient.addColorStop(0, "#49A6FD");
         gradient.addColorStop(0.14, "#49A6FD");
-        gradient.addColorStop(0.9, "#54FFA3");
-        gradient.addColorStop(1, "#54FFA3");
+        gradient.addColorStop(0.9, "#5473ff");
+        gradient.addColorStop(1, "#5457ff");
         ctx.fillStyle = gradient;
         ctx.globalAlpha = this.opacity;
         ctx.fill();
@@ -181,13 +181,7 @@
         70,
         0.3
       );
-      const wave2 = new Wave(
-        height * 0.3,
-        0.009,
-        "rgba(84, 255, 163, 1)",
-        60,
-        0.5
-      );
+      const wave2 = new Wave(height * 0.3, 0.009, "#00367dcc", 60, 0.5);
       waves.push(wave1, wave2);
 
       animate();
