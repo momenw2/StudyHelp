@@ -241,3 +241,97 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
+
+/* ########### Why Us ########### */
+
+.whyUsContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.whyUsTopContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.whyUsTopContainer h3 {
+  color: #00367dcc;
+  font-size: 50px;
+}
+
+.whyUsBottomContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.whyUsLeftBox {
+  width: 60%;
+  padding: 30px;
+}
+
+.whyUsRightBox {
+  width: 40%;
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.whyUsRightBox img {
+  width: 50%;
+}
+
+.whyUsCard {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+}
+
+.whyUsCardTitle {
+  color: #f1f1f1;
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 20px;
+  width: 240px;
+  text-align: center;
+}
+
+.whyUsCardTitle::after {
+  background: #00367dcc;
+  position: absolute;
+  content: "";
+  width: 230px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -webkit-transform: skew(-9deg);
+  -moz-transform: skew(-9deg);
+  -o-transform: skew(-9deg);
+  z-index: -1;
+}
+
+.whyUsDes {
+  /* color: #f1f1f1; */
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 20px;
+  width: 600px;
+  text-align: center;
+}
+
+.whyUsDes::after {
+  background: #d4d4d4cc;
+  position: absolute;
+  content: "";
+  width: 600px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -webkit-transform: skew(-9deg);
+  -moz-transform: skew(-9deg);
+  -o-transform: skew(-9deg);
+  z-index: -1;
+}
