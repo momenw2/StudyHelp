@@ -44,7 +44,7 @@ body {
 }
 
 .firstDivTxtBox p {
-  line-height: 3vh;
+  line-height: 4vh;
 }
 
 .subscriptionContainer {
@@ -248,8 +248,8 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
+  align-items: center; /* Center aligning the content */
 }
-
 .whyUsTopContainer {
   display: flex;
   justify-content: center;
@@ -267,15 +267,17 @@ body {
 }
 
 .whyUsLeftBox {
-  width: 60%;
+  width: 100%; /* Adjusted width */
   padding: 30px;
+  display: flex;
+  flex-direction: column; /* Ensuring cards stack vertically */
+  align-items: center; /* Center aligning the content */
 }
 
 .whyUsRightBox {
-  width: 40%;
+  width: 100%; /* Adjusted width */
   text-align: center;
-  justify-content: center;
-  margin: auto;
+  margin: 20px 0; /* Adjusted margin */
 }
 
 .whyUsRightBox img {
@@ -283,10 +285,8 @@ body {
 }
 
 .whyUsCard {
-  display: flex;
-  flex-direction: row;
+  width: 100%; /* Adjusted width */
   margin-bottom: 30px;
-  justify-content: space-between;
 }
 
 .whyUsCardTitle {
@@ -295,7 +295,8 @@ body {
   display: inline-block;
   padding: 10px 20px;
   margin-right: 20px;
-  width: 240px;
+  width: auto; /* Adjusted width */
+  max-width: 100%; /* Ensuring responsiveness */
   text-align: center;
 }
 
@@ -303,7 +304,7 @@ body {
   background: #00367dcc;
   position: absolute;
   content: "";
-  width: 230px;
+  width: 100%; /* Adjusted width */
   height: 100%;
   top: 0;
   left: 0;
@@ -314,12 +315,12 @@ body {
 }
 
 .whyUsDes {
-  /* color: #f1f1f1; */
   position: relative;
   display: inline-block;
   padding: 10px 20px;
   margin-right: 20px;
-  width: 600px;
+  width: 100%; /* Adjusted width */
+  max-width: 100%; /* Ensuring responsiveness */
   text-align: center;
 }
 
@@ -327,7 +328,7 @@ body {
   background: #d4d4d4cc;
   position: absolute;
   content: "";
-  width: 600px;
+  width: 100%; /* Adjusted width */
   height: 100%;
   top: 0;
   left: 0;
@@ -338,7 +339,7 @@ body {
 }
 
 /* Responsive Layout */
-@media (max-width: 768px) {
+@media (max-width: 901px) {
   .firstDivContainer,
   .fistDivLeftSide,
   .subscriptionContainer,
