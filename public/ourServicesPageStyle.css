@@ -277,7 +277,10 @@ body {
 .whyUsRightBox {
   width: 100%; /* Adjusted width */
   text-align: center;
+  display: flex;
   margin: 20px 0; /* Adjusted margin */
+  align-items: center;
+  justify-content: center;
 }
 
 .whyUsRightBox img {
