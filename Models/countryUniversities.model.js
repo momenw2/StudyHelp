@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const countryUniversitiesSchema = new Schema({
   country: String,
-  university: [
+  universities: [
     {
       name: String,
       img: String,
