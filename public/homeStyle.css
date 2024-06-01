@@ -210,18 +210,24 @@ body {
 }
 
 .bgBox {
-  width: 70%;
-  height: 90%;
-  background: conic-gradient(at 50% 25%, #0000 75%, #ffffff 0),
+  /* width: 70%;
+  height: 90%; */
+  /* background: conic-gradient(at 50% 25%, #0000 75%, #ffffff 0),
     conic-gradient(at 50% 25%, #0000 75%, #ffffff 0) 23px 23px,
     conic-gradient(at 50% 25%, #0000 75%, #ffffff 0) calc(2 * 23px)
       calc(2 * 23px),
     conic-gradient(at 50% 25%, #0000 75%, #ffffff 0) calc(3 * 23px)
       calc(3 * 23px),
     repeating-linear-gradient(135deg, #0076e3 0 12.5%, #4aa8ff 0 25%);
-  background-size: calc(4 * 23px) calc(4 * 23px);
-  border-radius: 20px 50px;
+  background-size: calc(4 * 23px) calc(4 * 23px); */
+  /* border-radius: 20px 50px; */
   margin-top: 30px;
+  text-align: center;
+}
+
+.bgBox img {
+  width: 80%;
+  height: auto;
 }
 
 .fourthRightBox {
