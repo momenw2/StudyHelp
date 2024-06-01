@@ -80,12 +80,11 @@ body {
   border: none;
 }
 
-.cardBox:hover {
-  /* box-shadow: 10px 5px 5px #4aa7ff6f; */
+/* .cardBox:hover {
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
   border-radius: 20px;
-}
+} */
 
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {
