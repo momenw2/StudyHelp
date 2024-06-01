@@ -17,7 +17,7 @@
 
     <div class="mainContainer">
       <div class="cardContainer">
-        <a href="/uni">
+        <!-- <a href="/uni">
           <div class="cardBox">
             <div class="logoBox">
               <img
@@ -33,8 +33,43 @@
               <p class="uniRank">QS ~ 26</p>
             </div>
           </div>
-        </a>
+        </a> -->
       </div>
     </div>
+
+    <script>
+      const cardContainer = document.querySelector(".cardContainer");
+      fetch("http://localhost:3000/countryUniversity")
+        .then((response) => response.json())
+        .then((data) => {
+          data.forEach((country) => {
+            country.universities.forEach((university) => {
+              cardContainer.innerHTML += `
+
+                <a href="/uni">
+                  <div class="cardBox">
+                    <div class="logoBox">
+                      <img
+                        src="images/universities/korea/${university.img}"
+                        alt="University Logo"
+                        class="uniLogo"
+                      />
+                    </div>
+                    <div class="txtbox">
+                      <h4 class="uniName">${university.name}</h4>
+                    </div>
+                    <div class="rankBox">
+                      <p class="uniRank">QS ~ ${university.QSRank}</p>
+                    </div>
+                  </div>
+                </a>
+            `;
+            });
+          });
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    </script>
   </body>
 </html>
