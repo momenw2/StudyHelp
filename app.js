@@ -50,6 +50,10 @@ app.use("/user", authRoutes);
 const countryRoutes = require("./Routes/country.router");
 app.use("/country", countryRoutes);
 
+// Country University  Router
+const countryUniversityRoutes = require("./Routes/countryUniversity.router");
+app.use("/countryUniversity", countryUniversityRoutes);
+
 //Error Handler
 app.use((req, res, next) => {
   const err = new Error("Not found");
