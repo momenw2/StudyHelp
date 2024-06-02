@@ -39,32 +39,42 @@
 
     <script>
       const cardContainer = document.querySelector(".cardContainer");
+
+      // Function to get the country parameter from the URL
+      function getCountryFromUrl() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get("country");
+      }
+
+      const country = getCountryFromUrl();
+
       fetch("http://localhost:3000/countryUniversity")
         .then((response) => response.json())
         .then((data) => {
-          data.forEach((country) => {
-            country.universities.forEach((university) => {
-              cardContainer.innerHTML += `
-
-                <a href="/uni">
-                  <div class="cardBox">
-                    <div class="logoBox">
-                      <img
-                        src="images/universities/korea/${university.img}"
-                        alt="University Logo"
-                        class="uniLogo"
-                      />
+          data.forEach((countryData) => {
+            if (countryData.country.toLowerCase() === country.toLowerCase()) {
+              countryData.universities.forEach((university) => {
+                cardContainer.innerHTML += `
+                  <a href="/uni">
+                    <div class="cardBox">
+                      <div class="logoBox">
+                        <img
+                          src="images/universities/korea/${university.img}"
+                          alt="University Logo"
+                          class="uniLogo"
+                        />
+                      </div>
+                      <div class="txtbox">
+                        <h4 class="uniName">${university.name}</h4>
+                      </div>
+                      <div class="rankBox">
+                        <p class="uniRank">QS ~ ${university.QSRank}</p>
+                      </div>
                     </div>
-                    <div class="txtbox">
-                      <h4 class="uniName">${university.name}</h4>
-                    </div>
-                    <div class="rankBox">
-                      <p class="uniRank">QS ~ ${university.QSRank}</p>
-                    </div>
-                  </div>
-                </a>
-            `;
-            });
+                  </a>
+                `;
+              });
+            }
           });
         })
         .catch((error) => {
