@@ -53,8 +53,9 @@
         .then((data) => {
           data.forEach((countryData) => {
             if (countryData.country.toLowerCase() === country.toLowerCase()) {
-              countryData.universities.forEach((university) => {
-                cardContainer.innerHTML += `
+              if (countryData.country.toLowerCase() !== "china") {
+                countryData.universities.forEach((university) => {
+                  cardContainer.innerHTML += `
                   <a href="/uni">
                     <div class="cardBox">
                       <div class="logoBox">
@@ -73,7 +74,30 @@
                     </div>
                   </a>
                 `;
-              });
+                });
+              } else {
+                countryData.universities.forEach((university) => {
+                  cardContainer.innerHTML += `
+                  <a href="${university.countryUniversityURL}">
+                    <div class="cardBox">
+                      <div class="logoBox">
+                        <img
+                          src="images/universities/${countryData.country}/${university.img}"
+                          alt="University Logo"
+                          class="uniLogo"
+                        />
+                      </div>
+                      <div class="txtbox">
+                        <h4 class="uniName">${university.name}</h4>
+                      </div>
+                      <div class="rankBox">
+                        <p class="uniRank">QS ~ ${university.QSRank}</p>
+                      </div>
+                    </div>
+                  </a>
+                `;
+                });
+              }
             }
           });
         })
