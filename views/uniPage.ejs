@@ -31,42 +31,71 @@
         const uniName = document.querySelector(".uniName");
         const mainContainer = document.querySelector(".mainContainer");
 
+        // const urlParams = new URLSearchParams(window.location.search);
+        // const country = urlParams.get("country");
+        // const university = urlParams.get("university");
+
+        // console.log(country);
+        // console.log(university);
+
+        // Function to get the country parameter from the URL
+        function getCountryFromUrl() {
+          const params = new URLSearchParams(window.location.search);
+          return params.get("country");
+        }
+
+        // Function to get the country parameter from the URL
+        function getUniFromUrl() {
+          const params = new URLSearchParams(window.location.search);
+          return params.get("university");
+        }
+
+        const country = getCountryFromUrl();
+        const university = getUniFromUrl();
+
         fetch("http://localhost:3000/university")
           .then((response) => response.json())
           .then((data) => {
-            uniName.innerHTML = `${data[0].uni}`;
-            data[0].Degree.forEach((degree) => {
-              const degreeName = document.createElement("h3");
-              degreeName.classList.add("degreeName");
-              degreeName.innerHTML = `${degree.degree}`;
-              mainContainer.appendChild(degreeName);
+            data.forEach((uni) => {
+              if (
+                uni.country.toLowerCase() === country.toLowerCase() &&
+                uni.uniURL.toLowerCase() === university.toLowerCase()
+              ) {
+                uniName.innerHTML = `${uni.uni}`;
+                uni.Degree.forEach((degree) => {
+                  const degreeName = document.createElement("h3");
+                  degreeName.classList.add("degreeName");
+                  degreeName.innerHTML = `${degree.degree}`;
+                  mainContainer.appendChild(degreeName);
 
-              degree.MainFaculty.forEach((mainFaculty) => {
-                const facultyName = document.createElement("h5");
-                facultyName.classList.add("facultyName");
-                facultyName.innerHTML = `${mainFaculty.mainFaculty}`;
-                mainContainer.appendChild(facultyName);
+                  degree.MainFaculty.forEach((mainFaculty) => {
+                    const facultyName = document.createElement("h5");
+                    facultyName.classList.add("facultyName");
+                    facultyName.innerHTML = `${mainFaculty.mainFaculty}`;
+                    mainContainer.appendChild(facultyName);
 
-                mainFaculty.SubFaculty.forEach((subFaculty) => {
-                  const subFacultyContainer = document.createElement("div");
-                  subFacultyContainer.classList.add("subFaculty");
-                  subFacultyContainer.innerHTML = `<h4>${subFaculty.subfaculty}</h4>`;
-                  mainContainer.appendChild(subFacultyContainer);
+                    mainFaculty.SubFaculty.forEach((subFaculty) => {
+                      const subFacultyContainer = document.createElement("div");
+                      subFacultyContainer.classList.add("subFaculty");
+                      subFacultyContainer.innerHTML = `<h4>${subFaculty.subfaculty}</h4>`;
+                      mainContainer.appendChild(subFacultyContainer);
 
-                  const majorContainer = document.createElement("div");
-                  majorContainer.classList.add("majorContainer");
-                  subFaculty.Major.forEach((major) => {
-                    const majorLink = document.createElement("a");
-                    majorLink.setAttribute("href", major.URl);
-                    const majorBox = document.createElement("div");
-                    majorBox.classList.add("cardBox");
-                    majorBox.innerHTML = `<div><p>${major.name}</p></div>`;
-                    majorLink.appendChild(majorBox);
-                    majorContainer.appendChild(majorLink);
+                      const majorContainer = document.createElement("div");
+                      majorContainer.classList.add("majorContainer");
+                      subFaculty.Major.forEach((major) => {
+                        const majorLink = document.createElement("a");
+                        majorLink.setAttribute("href", major.URl);
+                        const majorBox = document.createElement("div");
+                        majorBox.classList.add("cardBox");
+                        majorBox.innerHTML = `<div><p>${major.name}</p></div>`;
+                        majorLink.appendChild(majorBox);
+                        majorContainer.appendChild(majorLink);
+                      });
+                      subFacultyContainer.appendChild(majorContainer);
+                    });
                   });
-                  subFacultyContainer.appendChild(majorContainer);
                 });
-              });
+              }
             });
           })
           .catch((error) => {
