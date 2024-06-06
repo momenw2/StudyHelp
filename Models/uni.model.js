@@ -6,6 +6,7 @@ const universitySchema = new Schema({
   uni: {
     type: String,
   },
+  uniURL: String,
   Degree: [
     {
       degree: String,
