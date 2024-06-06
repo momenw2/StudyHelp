@@ -56,11 +56,17 @@
               if (countryData.country.toLowerCase() !== "china") {
                 countryData.universities.forEach((university) => {
                   cardContainer.innerHTML += `
-                  <a href="/uni">
+                  <a href="/uni?country=${encodeURIComponent(
+                    countryData.country
+                  )}?university=${encodeURIComponent(
+                    university.countryUniversityURL
+                  )}">
                     <div class="cardBox">
                       <div class="logoBox">
                         <img
-                          src="images/universities/${countryData.country}/${university.img}"
+                          src="images/universities/${countryData.country}/${
+                    university.img
+                  }"
                           alt="University Logo"
                           class="uniLogo"
                         />
