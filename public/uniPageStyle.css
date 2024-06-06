@@ -12,11 +12,11 @@ body {
 
 .uniName,
 .degreeName,
-.facultyName {
+.degreeName {
   text-align: center;
 }
 
-.facultyName {
+.degreeName {
   margin-left: 40px;
   font-size: 30px;
   color: #4aa8ff;
@@ -69,15 +69,14 @@ body {
 }
 
 .uniName,
-.degreeName,
-.facultyName {
+.degreeName {
   text-align: center;
 }
 
 .facultyName {
   margin-left: 40px;
-  font-size: 30px;
-  color: #4aa8ff;
+  font-size: 25px;
+  color: #154b7d;
 }
 
 .mainContainer {

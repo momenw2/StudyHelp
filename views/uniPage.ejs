@@ -36,8 +36,13 @@
           .then((data) => {
             uniName.innerHTML = `${data[0].uni}`;
             data[0].Degree.forEach((degree) => {
+              const degreeName = document.createElement("h3");
+              degreeName.classList.add("degreeName");
+              degreeName.innerHTML = `${degree.degree}`;
+              mainContainer.appendChild(degreeName);
+
               degree.MainFaculty.forEach((mainFaculty) => {
-                const facultyName = document.createElement("h3");
+                const facultyName = document.createElement("h5");
                 facultyName.classList.add("facultyName");
                 facultyName.innerHTML = `${mainFaculty.mainFaculty}`;
                 mainContainer.appendChild(facultyName);
