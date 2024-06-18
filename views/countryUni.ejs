@@ -53,7 +53,10 @@
         .then((data) => {
           data.forEach((countryData) => {
             if (countryData.country.toLowerCase() === country.toLowerCase()) {
-              if (countryData.country.toLowerCase() !== "china") {
+              if (
+                countryData.country.toLowerCase() !== "china" &&
+                countryData.country.toLowerCase() !== "australia"
+              ) {
                 countryData.universities.forEach((university) => {
                   cardContainer.innerHTML += `
                   <a href="/uni?country=${encodeURIComponent(
